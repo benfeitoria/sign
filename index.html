@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de Assinaturas</title>
+    <meta name="description" content="Gerador de assinaturas de e-mail">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="https://unpkg.com/@benfeitoria/styles/dist/css/main.css"/>
+    <link rel="stylesheet" href="./app.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.1/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+</head>
+<body id="app">
+<div class="container">
+    <div>
+        <h1>Gerador de assinatura</h1>
+
+        <table id="signature-table" style="width: 322px;">
+            <tr>
+                <td style="width: 50%; padding: 0; margin: 0;"></td>
+                <td style="width: 50%; padding: 0; margin: 0;">
+                    {{ name }}
+                    {{ role }}
+                    {{ email }}
+                    {{ phone }}
+                </td>
+            </tr>
+        </table>
+
+        <label for="signature-html">Código da assinatura</label>
+        <form>
+            <textarea name="signature-html" id="signature-html" class="mt-2 mb-2" cols="30" rows="10">teste</textarea>
+            <a id="copy-html" class="btn btn--pink-1">Copiar código</a>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
