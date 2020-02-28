@@ -13,29 +13,92 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.1/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 </head>
-<body id="app">
-<div class="container">
-    <div>
-        <h1>Gerador de assinatura</h1>
+<body>
+<div id="app">
+    <div class="container">
+        
 
-        <table id="signature-table" style="width: 322px;">
-            <tr>
-                <td style="width: 50%; padding: 0; margin: 0;"></td>
-                <td style="width: 50%; padding: 0; margin: 0;">
-                    {{ name }}
-                    {{ role }}
-                    {{ email }}
-                    {{ phone }}
+        <div class="">
+
+            <h1>Gerador de assinatura</h1>
+
+            <form>
+
+                <div class="form-group">
+                    <label for="name">Digite seu nome</label>
+                    <input type="text" v-model="name">
+                </div>
+                <div class="form-group">
+                    <label for="">Digite seu cargo</label>
+                    <input type="text" v-model="role">
+                </div>
+                <div class="form-group">
+                    <label for="">Digite seu e-mail</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label for="">Digite seu telefone</label>
+                    <input type="text">
+                </div>
+            
+            </form>
+
+        </div>
+
+        <div>
+            <table id="signature-table" style="width: 322px; height: 107px;">
+                <td style="width: 50%; height: initial; padding: 0; margin: 0; float: left;">
+        
+                    <img src="/dist/img/logo-pink.png" style="width: 124px; height: 31px;">
+        
+                    <p>benfeitoria.com | blog</p>
+        
+                    <ul style="display: flex; list-style: none;">
+                        <li><img src="/dist/img/instagram.png"></li>
+                        <li><img src="/dist/img/facebook.png"></li>
+                        <li><img src="/dist/img/linkedin.png"></li>
+                        <li><img src="/dist/img/twitter.png"></li>
+                    </ul>
+                    
                 </td>
-            </tr>
-        </table>
+                <td style="width: 50%; padding: 0; margin: 0; float: right;">
+                    <p>{{ name }}</p>
+                    <p>{{ role }}</p>
+                    <p>{{ email }}</p>
+                    <p>{{ phone }}</p>
+                </td>
+                
+            </table>
 
-        <label for="signature-html">Código da assinatura</label>
-        <form>
-            <textarea name="signature-html" id="signature-html" class="mt-2 mb-2" cols="30" rows="10">teste</textarea>
-            <a id="copy-html" class="btn btn--pink-1">Copiar código</a>
-        </form>
+            <a id="copy-html" class="btn btn--pink-1" data-clipboard-target="#signature-table">Copiar assinatura</a>
+
+
+        </div>
     </div>
+
+    <div id="signature-table" style="width: 322px; height: 107px;">
+        <div style="width: 50%; height: initial; padding: 0; margin: 0; float: left;">
+
+            <img src="/dist/img/logo-pink.png" style="width: 124px; height: 31px;">
+
+            <p>benfeitoria.com | blog</p>
+
+            <ul style="display: flex; list-style: none;">
+                <li><img src="/dist/img/instagram.png"></li>
+                <li><img src="/dist/img/facebook.png"></li>
+                <li><img src="/dist/img/linkedin.png"></li>
+                <li><img src="/dist/img/twitter.png"></li>
+            </ul>
+            
+        </div>
+        <div style="width: 50%; padding: 0; margin: 0; float: right;">
+            <p>{{ name }}</p>
+            <p>{{ role }}</p>
+            <p>{{ email }}</p>
+            <p>{{ phone }}</p>
+        </div>
+    </div>
+
 </div>
 <script type="text/javascript" src="app.js"></script>
 </body>

@@ -24,6 +24,9 @@ const vm = new Vue({
     computed: {
         html() {
             return ``;
+        },
+        computedCode() {
+            return this.name;
         }
     },
     created(){
