@@ -17,5 +17,9 @@
     padding-right: 40px;
 }
 
+.btn-clipboard:hover {
+    cursor: pointer;
+}
+
 
 
