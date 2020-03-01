@@ -25,9 +25,6 @@ const vm = new Vue({
         html() {
             return ``;
         },
-        computedCode() {
-            return this.name;
-        }
     },
     created(){
         const clipboard = new ClipboardJS('#copy-html');

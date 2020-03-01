@@ -5,6 +5,17 @@
     width: auto;
     max-width: 1920px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
+
+.form-sign {
+    display: flex;
+}
+
+.form-1 {
+    padding-right: 40px;
+}
+
+
+

@@ -16,87 +16,107 @@
 <body>
 <div id="app">
     <div class="container">
-        
 
-        <div class="">
+        <h1 class="title">Gerador de assinatura</h1>
+        <br>
 
-            <h1>Gerador de assinatura</h1>
-
-            <form>
-
-                <div class="form-group">
-                    <label for="name">Digite seu nome</label>
-                    <input type="text" v-model="name">
+            <form class="form-sign">
+                <div class="form-1">
+                    <div class="form-group">
+                        <label for="name">Digite seu nome</label>
+                        <input type="text" v-model="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Digite seu cargo</label>
+                        <input type="text" v-model="role">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="">Digite seu cargo</label>
-                    <input type="text" v-model="role">
+                <div class="form-2">
+                    <div class="form-group">
+                        <label for="">Digite seu e-mail</label>
+                        <input type="text" v-model="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Digite seu telefone</label>
+                        <input type="text" v-model="phone">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="">Digite seu e-mail</label>
-                    <input type="text">
-                </div>
-                <div class="form-group">
-                    <label for="">Digite seu telefone</label>
-                    <input type="text">
-                </div>
-            
             </form>
 
-        </div>
+        <div id="signature-table">
 
-        <div>
-            <table id="signature-table" style="width: 322px; height: 107px;">
-                <td style="width: 50%; height: initial; padding: 0; margin: 0; float: left;">
-        
-                    <img src="/dist/img/logo-pink.png" style="width: 124px; height: 31px;">
-        
-                    <p>benfeitoria.com | blog</p>
-        
-                    <ul style="display: flex; list-style: none;">
-                        <li><img src="/dist/img/instagram.png"></li>
-                        <li><img src="/dist/img/facebook.png"></li>
-                        <li><img src="/dist/img/linkedin.png"></li>
-                        <li><img src="/dist/img/twitter.png"></li>
-                    </ul>
-                    
-                </td>
-                <td style="width: 50%; padding: 0; margin: 0; float: right;">
-                    <p>{{ name }}</p>
-                    <p>{{ role }}</p>
-                    <p>{{ email }}</p>
-                    <p>{{ phone }}</p>
-                </td>
-                
+            <table  style="width: 322px; height: 107px;">
+                <tbody>
+                    <tr style="background-color: white;">
+
+                        <td style="width: 50%;  
+                        padding : 0 0 0 10px;
+                        margin: 0; 
+                        float: left; 
+                        border-right:1px solid #888888;">
+
+                            <a :href="url.site">
+                                <img src="/dist/img/logo-pink.png" style="width: 124px; height: 31px;">
+                            </a>
+
+                            <p style="font-size: 12px; padding-top: 5px;">
+                                <a :href="url.site" style="color: #0A55C4;">benfeitoria.com</a> | <a :href="url.blog" style="color: #0A55C4;">blog</a>
+                            </p> 
+
+                            <ul style="list-style: none; padding-top: 15px;">
+                                <li style="display: inline;">
+                                    <a :href="url.instagram"><img src="/dist/img/instagram.png"></a>
+                                </li>
+                                <li style="display: inline;">
+                                    <a :href="url.facebook"><img src="/dist/img/facebook.png"></a>
+                                </li>
+                                <li style="display: inline;">
+                                    <a :href="url.linkedin"><img src="/dist/img/linkedin.png"></a>
+                                </li>
+                                <li style="display: inline;">
+                                    <a :href="url.twitter"><img src="/dist/img/twitter.png"></a>
+                                </li>
+                            </ul>
+                            
+                        </td>
+
+                        <td style="width: 50%; 
+                        padding: 0 0 0 20px; 
+                        margin: 0; 
+                        float: right;">
+
+                            <p style="font-size: 14px;
+                            font-weight: bold;">
+                                {{ name }}
+                            </p>
+
+                            <p style="font-size: 12px; 
+                            color: #A4A4A4; 
+                            margin-top: 3px;">
+                                {{ role }}
+                            </p>
+
+                            <hr style="width: 16px; 
+                            border-bottom: 1px solid #002E93; 
+                            margin-left: 0px;
+                            margin-top: 5px;">
+
+                            <p style="font-size: 12px; padding-top: 12px;">
+                                {{ email }}
+                            </p>
+
+                            <p style="font-size: 12px; padding-top: 5px;">
+                                {{ phone }}
+                            </p>
+
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-
-            <a id="copy-html" class="btn btn--pink-1" data-clipboard-target="#signature-table">Copiar assinatura</a>
-
-
         </div>
-    </div>
 
-    <div id="signature-table" style="width: 322px; height: 107px;">
-        <div style="width: 50%; height: initial; padding: 0; margin: 0; float: left;">
+        <a id="copy-html" class="btn btn--pink-1" data-clipboard-target="#signature-table">Copiar assinatura</a>
 
-            <img src="/dist/img/logo-pink.png" style="width: 124px; height: 31px;">
-
-            <p>benfeitoria.com | blog</p>
-
-            <ul style="display: flex; list-style: none;">
-                <li><img src="/dist/img/instagram.png"></li>
-                <li><img src="/dist/img/facebook.png"></li>
-                <li><img src="/dist/img/linkedin.png"></li>
-                <li><img src="/dist/img/twitter.png"></li>
-            </ul>
-            
-        </div>
-        <div style="width: 50%; padding: 0; margin: 0; float: right;">
-            <p>{{ name }}</p>
-            <p>{{ role }}</p>
-            <p>{{ email }}</p>
-            <p>{{ phone }}</p>
-        </div>
     </div>
 
 </div>
