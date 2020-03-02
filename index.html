@@ -21,6 +21,12 @@
         <img class="logo" src="/dist/img/logo-pink.png" alt="Logo Benfeitoria">
         <h1 class="title">Gerador de assinatura</h1>
 
+        <div id="coppied-alert" v-if="clipped">
+            <div class="alert bg-alert-1">
+                Assinatura copiada com sucesso!
+            </div>            
+        </div>
+
             <form class="form-sign">
                 <div class="form-1">
                     <div class="form-group">
@@ -151,7 +157,6 @@
         </div>
 
         <a id="copy-html" class="btn btn--pink-1 btn-clipboard" data-clipboard-target="#signature-table">Copiar assinatura</a>
-
     </div>
 
 </div>

@@ -16,7 +16,7 @@
 }
 
 .title {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-weight: bold;
 }
 
@@ -48,3 +48,13 @@
 
 
 
+#coppied-alert .alert{
+    width: 560px;
+    padding: 10px 20px;
+    color: white !important;
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+    box-sizing: border;
+    text-align: center;
+    margin-bottom: 20px;
+}
