@@ -9,6 +9,11 @@
     align-items: center;
 }
 
+.title {
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
 .form-sign {
     display: flex;
 }
