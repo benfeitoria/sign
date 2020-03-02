@@ -22,6 +22,10 @@
     padding-right: 40px;
 }
 
+.signature {
+    margin-bottom: 40px;
+}
+
 .btn-clipboard:hover {
     cursor: pointer;
 }
