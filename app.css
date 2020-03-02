@@ -15,11 +15,21 @@
 }
 
 .form-sign {
-    display: flex;
+    display: contents;
+}
+
+.form-group {
+    width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .form-1 {
-    padding-right: 40px;
+    display: inline-flex;
+}
+
+.form-2 {
+    display: inline-flex;
 }
 
 .signature {
