@@ -33,6 +33,7 @@ const vm = new Vue({
         const clipboard = new ClipboardJS('#copy-html');
         clipboard.on('success', (e) => {
             e.clearSelection();
+            alert("Copiado!");
             this.clipped = true;
         });
     }
