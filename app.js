@@ -1,3 +1,5 @@
+Vue.use(VueMask.VueMaskPlugin);
+
 const vm = new Vue({
     el: "#app",
     data: {
@@ -13,7 +15,8 @@ const vm = new Vue({
             facebook: "https://www.facebook.com/benfeitoria/",
             linkedin: "https://www.linkedin.com/company/benfeitoria/",
             twitter: "https://twitter.com/benfeitoria"
-        }
+        },
+        phone_mask: '+## (##) #### ####'
     },
     methods: {
 
