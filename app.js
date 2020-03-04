@@ -75,10 +75,20 @@ const vm = new Vue({
     created(){
         this.getInformationsFromStorage();
 
-
-        const clipboard = new ClipboardJS('#copy-html');
+        const clipboard = new ClipboardJS('#copy-text');
 
         clipboard.on('success', (e) => {
+            e.clearSelection();
+            this.clippedHandler();
+        });
+
+        const clipboardHTML = new ClipboardJS('#copy-html', {
+            text: function() {
+                return document.getElementById("signature-div").innerHTML;
+            }
+        });
+
+        clipboardHTML.on('success', (e) => {
             e.clearSelection();
             this.clippedHandler();
         });
