@@ -18,8 +18,14 @@
 <div id="app">
     <div class="container">
 
-        <img class="logo" src="/dist/img/logo-pink.png">
+        <img class="logo" src="/dist/img/logo-pink.png" alt="Logo Benfeitoria">
         <h1 class="title">Gerador de assinatura</h1>
+
+        <div id="coppied-alert" v-if="clipped">
+            <div class="alert bg-alert-1">
+                Assinatura copiada com sucesso!
+            </div>            
+        </div>
 
             <form class="form-sign">
                 <div class="form-1">
@@ -44,7 +50,7 @@
                 </div>
             </form>
 
-        <div class="signature">
+        <div class="signature" id="signature-div">
 
             <table id="signature-table" style="
                 width: 322px; 
@@ -58,38 +64,61 @@
                         margin: 0;
                         border-right:1px solid #888888;">
 
-                            <a :href="url.site" style="
+                            <a :href="url.site" target="_blank" style="
                             margin: 0;">
-                                <img src="/dist/img/logo-pink.png" style="
+                                <img alt="Benfeitoria Logo" src="https://unpkg.com/@benfeitoria/sign/dist/img/logo-pink.png" style="
                                     width: 124px; 
-                                    height: 31px;">
+                                    height: 31px;
+                                    margin-top: -10px;">
                             </a>
 
                             <p style="
                             margin: 0;
                             padding: 5px 0 0 0;
+                            color: black;
                             font-size: 12px;">
-                                <a :href="url.site" style="color: #0A55C4; margin: 0;">
-                                    benfeitoria.com</a> | 
-                                <a :href="url.blog" style="color: #0A55C4; margin: 0;">
-                                    blog</a>
+                                <a :href="url.site" target="_blank" style=" margin: 0;">
+                                    <span style="
+                                        color: #0A55C4 !important; 
+                                        text-decoration: underline;
+                                        text-decoration-color: #0A55C4;">
+                                        benfeitoria.com
+                                    </span>
+                                </a> | 
+                                <a :href="url.blog" target="_blank" style="margin: 0;">
+                                    <span style="
+                                    color: #0A55C4 !important; 
+                                    text-decoration: underline;
+                                    text-decoration-color: #0A55C4;">
+                                        blog
+                                    </span>
+                                </a>
                             </p> 
 
                             <ul style="
                             margin: 0;
                             padding: 15px 0 0 0;
-                            list-style: none;">
-                                <li style="display: inline;">
-                                    <a :href="url.instagram"><img src="/dist/img/instagram.png"></a>
+                            list-style: none;
+                            font-size: 0px;">
+                                <li style="display: inline; margin: 0 5px 0 0;">
+                                    <a :href="url.instagram" target="_blank">
+                                        <img src="https://unpkg.com/@benfeitoria/sign/dist/img/instagram.png" alt="Instagram Benfeitoria" >
+                                    </a>
                                 </li>
-                                <li style="display: inline;">
-                                    <a :href="url.facebook"><img src="/dist/img/facebook.png"></a>
+                                <li style="display: inline; margin: 0 5px 0 0;">
+                                    <a :href="url.facebook" target="_blank">
+                                        <img src="https://unpkg.com/@benfeitoria/sign/dist/img/facebook.png" alt="Facebook Benfeitoria">
+                                    </a>
                                 </li>
-                                <li style="display: inline;">
-                                    <a :href="url.linkedin"><img src="/dist/img/linkedin.png"></a>
+                                <li style="display: inline; margin: 0 5px 0 0;">
+                                    <a :href="url.linkedin" target="_blank">
+                                        <img src="https://unpkg.com/@benfeitoria/sign/dist/img/linkedin.png" alt="Linkedin Benfeitoria">
+                                    </a>
                                 </li>
-                                <li style="display: inline;">
-                                    <a :href="url.twitter"><img src="/dist/img/twitter.png"></a>
+                                <li style="display: inline; margin: 0 5px 0 0;">
+                                    <a :href="url.twitter" target="_blank">
+                                        <img src="https://unpkg.com/@benfeitoria/sign/dist/img/twitter.png" alt="Twitter Benfeitoria">
+                                    </a>
                                 </li>
                             </ul>
                             
@@ -102,7 +131,8 @@
                             padding: 0;
                             margin: 0;
                             font-size: 14px;
-                            font-weight: bold;">
+                            font-weight: bold;
+                            color: black;">
                                 {{ name }}
                             </p>
 
@@ -123,14 +153,16 @@
                             <p style="
                             padding: 12px 0 0 0;
                             margin: 0;
-                            font-size: 12px;">
+                            font-size: 12px;
+                            color: black;">
                                 {{ email }}
                             </p>
 
                             <p style="
                             padding: 5px 0 0 0;
                             margin: 0;
-                            font-size: 12px;">
+                            font-size: 12px;
+                            color: black;">
                                 {{ phone }}
                             </p>
 
@@ -140,8 +172,10 @@
             </table>
         </div>
 
-        <a id="copy-html" class="btn btn--pink-1 btn-clipboard" data-clipboard-target="#signature-table">Copiar assinatura</a>
-
+        <div class="clip-buttons">
+            <a id="copy-text" class="btn btn--pink-1 btn-clipboard" data-clipboard-target="#signature-table">Copiar assinatura</a>
+            <a id="copy-html" class="btn btn--blue-2 btn-clipboard" data-clipboard-target="#signature-div">Copiar HTML</a>
+        </div>
     </div>
 
 </div>
